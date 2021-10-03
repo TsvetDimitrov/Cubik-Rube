@@ -90,6 +90,7 @@ p.name {
     border-bottom: 1px solid #2b415433;
 }
 
+
 button, main a.btn {
     border: none;
     padding: 8px;
@@ -99,7 +100,6 @@ button, main a.btn {
     font-size: 18px;
     width: 35%;
     margin: 12px;
-    margin-left: 6%;
     border-radius: 4px;
     background: #607588;
     color: white;

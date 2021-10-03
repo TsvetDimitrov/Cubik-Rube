@@ -3,9 +3,7 @@ const router = require('express').Router();
 const cubeService = require('../services/cubeService');
 const cubeAccessoryController = require('./cubeAccessoryController');
 
-
 const getCreateCubePage = (req, res) => {
-    console.log('KURA')
     res.render('cube/create');
 };
 
@@ -21,13 +19,11 @@ const createCube = async (req, res) => {
     }
 };
 
-
 const cubeDetails = async (req, res) => {
     let cube = await cubeService.getOne(req.params.cubeId);
 
     res.render('cube/details', { ...cube });
-}
-
+};
 
 router.get('/create', getCreateCubePage);
 router.post('/create', createCube);
