@@ -11,3 +11,6 @@ router.post('/create', (req, res) => {
     console.log(accessory);
     res.redirect('/');
 });
+
+
+module.exports = router;
