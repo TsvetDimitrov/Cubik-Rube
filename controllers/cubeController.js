@@ -5,23 +5,21 @@ const cubeAccessoryController = require('./cubeAccessoryController');
 
 
 const getCreateCubePage = (req, res) => {
-
+    console.log('KURA')
     res.render('cube/create');
 };
 
 const createCube = async (req, res) => {
     let { name, description, imageUrl, difficulty } = req.body;
 
-
     try {
         await cubeService.create(name, description, imageUrl, difficulty);
 
         res.redirect('/');
-
-    }catch(err){
-        res.status(400).send(err.message).end();
+    } catch (error) {
+        res.status(400).send(error.message).end();
     }
-}
+};
 
 
 const cubeDetails = async (req, res) => {
