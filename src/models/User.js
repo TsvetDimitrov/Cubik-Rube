@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -8,9 +9,20 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: [6, 'Your pass must me longer than 5 characters']
     }
 });
+
+//Hash password here instead of the service
+
+// userSchema.pre('save', function (next) {
+//     bcrypt.hash(this.passwrod, 10)
+//         .then(hash => {
+//             this.password = hash;
+//             next();
+//         });
+// });
 
 
 const User = mongoose.model('User', userSchema);
