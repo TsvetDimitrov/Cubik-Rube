@@ -47,13 +47,18 @@ const deleteOne = (cubeId) => {
     Cube.findByIdAndDelete(cubeId);
 }
 
+const updateOne = (cubeId) => {
+    Cube.findByIdAndUpdate(cubeId, cube, { runValidators: true });
+}
+
 const cubeService = {
     getAll,
     create,
     getOne,
     search,
     attachAccessory,
-    deleteOne
+    deleteOne,
+    updateOne
 };
 
 module.exports = cubeService;
