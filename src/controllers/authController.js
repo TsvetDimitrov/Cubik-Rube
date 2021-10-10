@@ -16,7 +16,7 @@ router.get('/register', (req, res) => {
     res.render('auth/register');
 });
 
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
     try {
         let { username, password, repeatPassword } = req.body;
 
